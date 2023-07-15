@@ -77,8 +77,8 @@ for(m in 1:length(uni_cusID)){
 head(result)
 
 # EC2) the five customers who have spent the most money
-b<-which(data$InvoiceDate == as.Date("2011-07-01"))[1] #245904
-e<-which(data$InvoiceDate == as.Date("2011-08-01"))[1]-1 #320705
+data_july<-which(data$InvoiceDate == as.Date("2011-07-01"))[1] #245904
+data_august<-which(data$InvoiceDate == as.Date("2011-08-01"))[1]-1 #320705
 one_mon<-data[b:e,]
 for(k in 1:nrow(one_mon))
   one_mon$totalspen[k]<-one_mon$Quantity[k] * one_mon$UnitPrice[k]
